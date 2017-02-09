@@ -1,0 +1,30 @@
+{
+  "name": "force-upgrade-node",
+  "version": "0.0.1",
+  "description": "Very forceful, dangerous, not recommended upgrade of Node on Windows",
+  "main": "index.js",
+  "files": ["index.js", "src", "vendor/.gitkeep"],
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doesdev/force-upgrade-node.git"
+  },
+  "keywords": [
+    "danger"
+  ],
+  "author": "Andrew Carpenter (https://github.com/doesdev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doesdev/force-upgrade-node/issues"
+  },
+  "homepage": "https://github.com/doesdev/force-upgrade-node#readme",
+  "dependencies": {
+    "ngo": "^1.0.1",
+    "decompress": "doesdev/decompress#86b8777"
+  },
+  "devDependencies": {
+    "ava": "^0.18.1"
+  }
+}
