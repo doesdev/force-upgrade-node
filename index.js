@@ -18,7 +18,8 @@ const arch = /x64/.test(process.arch) ? 'x64' : 'x86'
 // Main
 let upgrade = (pkg) => {
   console.log(`Launching GO upgrade script, Node will now exit`)
-  ngo(['run', upgrader, pkg, nodePath, done]).then(console.log).catch(console.error)
+  let cmd = ['run', upgrader, pkg, nodePath, done]
+  return ngo(cmd).then(console.log).catch(console.error)
 }
 getNodeVersions().then(downloadLatest).then(upgrade).catch(console.log)
 
@@ -58,7 +59,7 @@ function unpackArchive (arc) {
   return new Promise((resolve, reject) => {
     decompress(arc, vendor, {plugins: [zip()]}).then(() => {
       fs.unlink(arc, (err) => { if (err) console.warn(err) })
-      return resolve(path.join(vendor, arc.replace(/\.zip$/, '')))
+      return resolve(arc.replace(/\.zip$/, ''))
     }).catch(reject)
   })
 }
