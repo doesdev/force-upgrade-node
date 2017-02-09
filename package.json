@@ -1,9 +1,12 @@
 {
   "name": "force-upgrade-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Very forceful, dangerous, not recommended upgrade of Node on Windows",
   "main": "index.js",
-  "files": ["index.js", "src", "vendor/.gitkeep"],
+  "files": ["index.js", "cli.js", "src", "vendor/.gitkeep"],
+  "bin": {
+    "force-upgrade-node": "cli.js"
+  },
   "scripts": {
     "test": "ava"
   },

@@ -6,10 +6,11 @@ This package is idiotic and no sane person should ever use it.
 I only wrote it to run on a prod server for fun and profit. #NotSane.
 
 When the exported function is called it *attempts* to do the following:  
+
 1. Get latest LTS release of Node in zip format  
 2. Unzip it  
 3. Spin up a GO script that does the following:  
-  - Kills all `node.exe` processes
+  - Kills all `node.exe` processes, including the one it was called from
   - Moves active Node program folder to `${oldFolder}-bak`
   - Moves contents of downloaded zip into that folder
 
@@ -19,13 +20,25 @@ Also, if you're dumb enough to run this be advised it needs run from an elevated
 
 But seriously, don't run this. It's infinitely stupid and dangerous.
 
+## cli install
+
+```sh
+$ npm install --global force-upgrade-node
+```
+
 ## install
 
 ```sh
 $ npm install --save force-upgrade-node
 ```
 
-## usage
+## cli usage
+
+```sh
+$ force-upgrade-node
+```
+
+## programmatic usage
 
 ```js
 const fun = require('force-upgrade-node')
