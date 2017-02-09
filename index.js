@@ -16,12 +16,13 @@ const vendor = path.resolve(__dirname, 'vendor')
 const arch = /x64/.test(process.arch) ? 'x64' : 'x86'
 
 // Main
-let upgrade = (pkg) => {
+module.exports = () => getNodeVersions().then(downloadLatest).then(upgrade)
+
+function upgrade (pkg) {
   console.log(`Launching GO upgrade script, Node will now exit`)
   let cmd = ['run', upgrader, pkg, nodePath, done]
   return ngo(cmd).then(console.log).catch(console.error)
 }
-getNodeVersions().then(downloadLatest).then(upgrade).catch(console.log)
 
 // Parse latest go versions from nodeRelUrl
 function getNodeVersions () {
