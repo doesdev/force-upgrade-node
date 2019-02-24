@@ -1,9 +1,10 @@
+# DO NOT USE THIS. It will not work and will leave your Node install in a totally borked state.
+
 # force-upgrade-node [![NPM version](https://badge.fury.io/js/force-upgrade-node.svg)](https://npmjs.org/package/force-upgrade-node)   [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 > Very forceful, dangerous, not recommended upgrade of Node on Windows
 
 This package is idiotic and no sane person should ever use it.
-I only wrote it to run on a prod server for fun and profit. #NotSane.
 
 When the exported function is called it *attempts* to do the following:  
 
